@@ -1,5 +1,5 @@
 /*
-Take two numbers from user and find the prime numbers between those two numbers.
+Take two numbers from user and find the prime numbers between those two numbers. Finally sum of all the prime numbers.
  */
 
 import java.util.Scanner;
@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class findPrimeNumbers {
     public static void main(String[] args) {
         int count=0;
+        int totalPrime=0;
         Scanner input1 = new Scanner(System.in);
         Scanner input2 = new Scanner(System.in);
         System.out.print("Please input initial number: ");
@@ -24,9 +25,11 @@ public class findPrimeNumbers {
                 }
                 if(count==0){
                     System.out.println(i);
+                    totalPrime+=i;
                 }
                 count=0;
             }
+            System.out.println("Sum of all prime numbers: "+totalPrime);
         }
         else{
             System.out.println("Please give positive number.");
