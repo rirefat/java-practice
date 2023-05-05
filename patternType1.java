@@ -1,5 +1,11 @@
-import java.util.Scanner;
+/*
+Create patter like below after taking row number from users.
+1
+1 2
+1 2 3
+*/
 
+import java.util.Scanner;
 public class patternType1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

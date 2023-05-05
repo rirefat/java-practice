@@ -1,3 +1,9 @@
+/*
+Create patter like below after taking row number from users.
+3 2 1
+2 1
+1
+*/
 import java.util.Scanner;
 
 public class patternType2 {
