@@ -1,6 +1,6 @@
 public class basicArray {
     public static void main(String[] args) {
-        int[] nums = new int[3];
+        int[] nums = new int[3]; // Declaring array with its length 3
         nums[0]=1;
         System.out.println(nums[0]);
 
