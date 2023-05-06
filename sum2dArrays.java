@@ -1,3 +1,9 @@
+/*
+* Task Descriptions:
+* At first take row and column numbers from user. According to the row and column numbers,
+*  - take all the values for two matrix
+*  - find the sum of the two matrix.
+*  - Print all the matrix including their result*/
 import java.util.Scanner;
 
 public class sum2dArrays {
