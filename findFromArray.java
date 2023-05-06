@@ -16,16 +16,19 @@ public class findFromArray {
         int listSize = input.nextByte();
         int[] nums = new int[listSize];
 
+        // Getting numbers from user
         System.out.println("Give the numbers below:");
         for (int i=0; i<listSize; i++){
             nums[i] = input.nextByte();
         }
 
+        // Printing all the given numbers
         System.out.print("Yur given numbers are: ");
         for (int i=0; i<nums.length; i++){
             System.out.print(nums[i]+" ");
         }
 
+        // Find sum & average of all numbers
         double sum = 0;
         for(int i=0; i< nums.length; i++){
             sum+=nums[i];
@@ -35,6 +38,7 @@ public class findFromArray {
         double average = sum/ nums.length;
         System.out.println("Average of the numbers: "+String.format("%.2f",average));
 
+        // Find max value
         int max = nums[0];
         for (int i=0; i< nums.length; i++){
             if(max<nums[i]){
@@ -43,6 +47,7 @@ public class findFromArray {
         }
         System.out.println("Max number: "+max);
 
+        // Find min value
         int min = nums[0];
         for (int i=0; i<nums.length; i++){
             if(min>nums[i]){
