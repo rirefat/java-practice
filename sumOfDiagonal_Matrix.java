@@ -41,3 +41,9 @@ public class sumOfDiagonal_Matrix {
         System.out.println("Sum of diagonal elements: "+sum);
     }
 }
+
+/*
+Some special notes regarding diagonal
+when ( row == col ) then it will be the primary diagonal
+when ( row+col < length-1 ) then it will be the secondary diagonal
+*/
