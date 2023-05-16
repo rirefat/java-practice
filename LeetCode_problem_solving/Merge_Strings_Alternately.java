@@ -32,40 +32,52 @@ package LeetCode_problem_solving;
 
 public class Merge_Strings_Alternately {
     public static void main(String[] args) {
-        String word1 = "abc", word2 = "pqr";
+        String word1 = "ab", word2 = "pqrs";
 
-        int len1 = word1.length();
-        int len2 = word2.length();
-        StringBuffer str1 = new StringBuffer(word1);
-        StringBuffer str2 = new StringBuffer(word2);
+//        int len1 = word1.length();
+//        int len2 = word2.length();
+//        StringBuffer str1 = new StringBuffer(word1);
+//        StringBuffer str2 = new StringBuffer(word2);
+//        StringBuffer finalStr = new StringBuffer("");
+//
+//        if(len1>len2){
+//            StringBuffer rest = new StringBuffer(str1);
+//            str1.delete(len2, len1);
+//            rest.delete(0, len2);
+//            for (int i=0; i<len2; i++){
+//                finalStr.append(str1.charAt(i));
+//                finalStr.append(str2.charAt(i));
+//            }
+//            finalStr.append(rest);
+//        }
+//        else if (len1<len2) {
+//            StringBuffer rest = new StringBuffer(str2);
+//            str2.delete(len1, len2);
+//            rest.delete(0, len1);
+//            for (int i=0; i<len1; i++){
+//                finalStr.append(str1.charAt(i));
+//                finalStr.append(str2.charAt(i));
+//            }
+//            finalStr.append(rest);
+//        }
+//        else{
+//            for (int i=0; i<len1; i++){
+//                finalStr.append(str1.charAt(i));
+//                finalStr.append(str2.charAt(i));
+//            }
+//        }
+
+
+//        Solution 2:
         StringBuffer finalStr = new StringBuffer("");
+        int len1 = word1.length(), len2 = word2.length();
+        int i = 0;
 
-        if(len1>len2){
-            StringBuffer rest = new StringBuffer(str1);
-            str1.delete(len2, len1);
-            rest.delete(0, len2);
-            for (int i=0; i<len2; i++){
-                finalStr.append(str1.charAt(i));
-                finalStr.append(str2.charAt(i));
-            }
-            finalStr.append(rest);
+        while (i<len1 && i<len2){
+            finalStr.append(word1.charAt(i)).append(word2.charAt(i));
+            i++;
         }
-        else if (len1<len2) {
-            StringBuffer rest = new StringBuffer(str2);
-            str2.delete(len1, len2);
-            rest.delete(0, len1);
-            for (int i=0; i<len1; i++){
-                finalStr.append(str1.charAt(i));
-                finalStr.append(str2.charAt(i));
-            }
-            finalStr.append(rest);
-        }
-        else{
-            for (int i=0; i<len1; i++){
-                finalStr.append(str1.charAt(i));
-                finalStr.append(str2.charAt(i));
-            }
-        }
+        finalStr.append(word1.substring(i,len1)).append(word2.substring(i,len2));
 
         System.out.println("Merged Result: "+finalStr);
     }
