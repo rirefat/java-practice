@@ -2,15 +2,12 @@ package LeetCode_problem_solving;
 
 public class test {
     public static void main(String[] args) {
-        int n = 10;
-        boolean[] seen = new boolean[n];
-        int ans = 0;
-        for (int num = 2; num < n; num++) {
-            if (seen[num]) continue;
-            ans += 1;
-            for (long mult = (long)num * num; mult < n; mult += num)
-                seen[(int)mult] = true;
-        }
-        System.out.println(ans);
+        int n = 14;
+
+        double d1 = Math.sqrt(n);
+        double d2 = Math.round(d1);
+        double fracValue = d1-d2;
+        boolean result = Math.abs(fracValue)>0 ? false:true;
+        System.out.println(result);
     }
 }
