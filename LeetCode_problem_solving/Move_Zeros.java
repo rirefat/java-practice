@@ -39,6 +39,22 @@ public class Move_Zeros {
             result.add(0);
         }
 
-        System.out.println(result.toArray());
+//        int[] outputArray = new int[output.size()];
+//        int index = 0;
+//        for (int x:output){
+//            outputArray[index] = x;
+//            index++;
+//        }
+        int[] output = new int[result.size()];
+        int index = 0;
+        for (int x:result){
+            output[index] = x;
+            index++;
+        }
+
+        for (int i:output){
+            System.out.println(i);
+        }
+//        System.out.println(result);
     }
 }

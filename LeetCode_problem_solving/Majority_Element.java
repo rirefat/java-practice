@@ -14,8 +14,12 @@ Output: 2
 * */
 package LeetCode_problem_solving;
 
+import java.util.Arrays;
+
 public class Majority_Element {
     public static void main(String[] args) {
-        int[] nums = {2,2,1,1,1,2,2};
+        int[] nums = {2,4,4,2,1,0,5,6};
+        Arrays.sort(nums);
+        System.out.println(nums[nums.length/2]);
     }
 }
