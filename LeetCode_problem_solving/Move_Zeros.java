@@ -39,6 +39,6 @@ public class Move_Zeros {
             result.add(0);
         }
 
-        System.out.println(result);
+        System.out.println(result.toArray());
     }
 }
