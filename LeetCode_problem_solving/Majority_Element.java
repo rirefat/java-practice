@@ -18,7 +18,7 @@ import java.util.Arrays;
 
 public class Majority_Element {
     public static void main(String[] args) {
-        int[] nums = {2,4,4,2,1,0,5,6};
+        int[] nums = {0,0,0,0,1,2,3,4};
         Arrays.sort(nums);
         System.out.println(nums[nums.length/2]);
     }

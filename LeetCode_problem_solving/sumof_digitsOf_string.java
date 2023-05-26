@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class sumof_digitsOf_string {
     public static void main(String[] args) {
-        String s ="abc";
+        String s ="leetcode";
         int k = 2;
 
         String finalConvert = "";
@@ -34,18 +34,21 @@ public class sumof_digitsOf_string {
 
         for(int i=0; i<s.length(); i++){
             int serialNo = alphabets.indexOf(s.charAt(i)) + 1;
-//            System.out.println("Serial of "+s.charAt(i)+":"+ serialNo);
             String convert = Integer.toString(serialNo);
             finalConvert += convert;
         }
-//        System.out.println(finalConvert);
         long serials = Integer.parseInt(finalConvert);
 
         long temp = serials;
-        while (temp!=0){
-            long remainder = temp%10;
-            sum += remainder;
-            temp = temp/10;
+        int i=0;
+        while (i != k){
+            while (temp!=0){
+                long remainder = temp%10;
+                sum += remainder;
+                temp = temp/10;
+            }
+            i++;
+            temp = sum;
         }
         System.out.println("Result: "+sum);
     }
