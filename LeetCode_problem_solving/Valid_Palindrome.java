@@ -26,48 +26,28 @@ import java.util.ArrayList;
 
 public class Valid_Palindrome {
     public static void main(String[] args) {
-        String s = "0P";
-        ArrayList<Character> alphabets = new ArrayList<>();
-        String sorted = "";
+        String s = "A man, a plan, a canal: Panama";
+        boolean response = true;
 
-        for (char c='a'; c<='z'; c++){
-            alphabets.add(c);
-        }
-
-//        for (int i =0; i<10; i++){
-//            String numericSTR = Integer.toString(i);
-//            numeric.add(numericSTR);
-//            newSum += numericSTR;
-//        }
-//        String[] numeric = {"0","1","2","3","4","5","6","7","8","9"};
-        String numeric = "0123456789";
-//        System.out.println(numeric.contains("5"));
-
-        for (int i=0; i<s.length(); i++){
-
-            char singleChr = s.toLowerCase().charAt(i);
-            int numericIndex = numeric.indexOf(singleChr);
-//            System.out.println(singleChr);
-//            if(alphabets.contains(singleChr)) sorted += singleChr;
-//            sorted = (alphabets.contains(singleChr) && numeric.contains(singleChr)) ? sorted+singleChr : sorted;
-            if(alphabets.contains(singleChr)){
-                sorted += singleChr;
+        int x = 0;
+        int y = s.length()-1;
+        while (x<y){
+            Character head = s.charAt(x);
+            Character tail = s.charAt(y);
+            if (!Character.isLetterOrDigit(head)){
+                x++;
+                continue;
             }
-            else if(numericIndex != -1){
-                sorted += singleChr;
+            if (!Character.isLetterOrDigit(tail)){
+                y--;
+                continue;
             }
+            if (Character.toLowerCase(head) != Character.toLowerCase(tail)){
+                response = false;
+            }
+            x++;
+            y--;
         }
-
-        StringBuffer str = new StringBuffer(sorted);
-        String inverted = str.reverse().toString();
-
-//        if(inverted.equals(sorted)){
-//            System.out.println("Result: Palindrom String");
-//        }
-//        else{
-//            System.out.println("Result: Not Palindrom String");
-//        }
-        boolean palindrome = inverted.equals(sorted) ? true : false;
-        System.out.println(palindrome);
+        System.out.println("Is Palindrome :"+response);
     }
 }
