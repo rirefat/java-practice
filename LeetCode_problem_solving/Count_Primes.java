@@ -1,21 +1,21 @@
 package LeetCode_problem_solving;
 
+import java.util.Arrays;
+
 public class Count_Primes {
     public static void main(String[] args) {
         int n = 10;
-        int count = 0, primeNumbers=0;
-        for (int i=2; i<=n; i++){
-            for (int j=2; j<=i/2; j++){
-                if (i%j == 0){
-                    count++;
-                    break;
+        boolean[] primes = new boolean[n];
+        Arrays.fill(primes, true);
+        int result = 0;
+        for (int i = 2; i < n; ++i) {
+            if (primes[i]) {
+                result++;
+                for (int j = i + i; j < n; j += i) {
+                    primes[j] = false;
                 }
             }
-            if (count==0){
-                primeNumbers++;
-            }
-            count=0;
         }
-        System.out.println(primeNumbers);
+        System.out.println(result);
     }
 }

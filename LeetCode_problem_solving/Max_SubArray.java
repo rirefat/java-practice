@@ -19,29 +19,20 @@ import java.util.Arrays;
 
 public class Max_SubArray {
     public static void main(String[] args) {
-        int[] nums = {1,12,-5,-6,50,3};
+        int[] arr = {1,12,-5,-6,50,3};
         int k = 4;
+        double currentSum = 0;
+        double currentAvg = 0;
+        double maxAvg = Integer.MIN_VALUE;
 
-        int sum=0;
-
-        int max=Integer.MIN_VALUE;
-
-        int i=0;
-        int j=0;
-        while(j<nums.length){
-            sum+=nums[j];
-            if(j-i+1<k){
-                j++;
-            }
-            else if(j-i+1==k){
-                max=Math.max(max,sum);
-                sum=sum-nums[i];
-                i++;
-                j++;
-
+        for (int i=0; i<arr.length; i++){
+            currentSum += arr[i];
+            if(i >= (k-1)){
+                currentAvg = currentSum/k;
+                maxAvg = Math.max(maxAvg, currentAvg);
+                currentSum -= arr[i-(k-1)];
             }
         }
-        double average = (double) max/k;
-        System.out.println(average);
+        System.out.println("Maximum Average: "+maxAvg);
     }
 }
