@@ -18,8 +18,19 @@ import java.util.Arrays;
 
 public class Majority_Element {
     public static void main(String[] args) {
-        int[] nums = {0,0,0,0,1,2,3,4};
-        Arrays.sort(nums);
-        System.out.println(nums[nums.length/2]);
+        int[] nums = {3,1,3,1,1,2,2};
+        int count = 0, maxElement = 0;
+        for(int num: nums) {
+            if(count == 0) {
+                maxElement = num;
+            }
+            if(num == maxElement) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+
+        System.out.println(maxElement);
     }
 }
