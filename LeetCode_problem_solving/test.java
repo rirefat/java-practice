@@ -4,8 +4,10 @@ import java.util.Arrays;
 
 public class test {
     public static void main(String[] args) {
-        int x = 47;
-        boolean res = Character.isDigit(x);
-        System.out.println(res);
+        String magazine = "aab";
+        int[] alphabets = new int[26];
+        for(char c:magazine.toCharArray()){
+            System.out.println(alphabets[c-'a']++);
+        }
     }
 }
